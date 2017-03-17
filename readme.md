@@ -1,2 +1,2 @@
-Bolierplate React project
+React Timer application
 =====================
