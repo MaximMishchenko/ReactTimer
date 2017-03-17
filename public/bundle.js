@@ -14454,7 +14454,7 @@ exports = module.exports = __webpack_require__(71)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".top-bar, .top-bar ul {\n  background-color: #106582; }\n\n.top-bar {\n  padding: 0; }\n  .top-bar .menu-text {\n    color: white; }\n  .top-bar ul li .nav-link {\n    color: white; }\n  .top-bar ul li .nav-link:hover {\n    color: #5E96A8;\n    background-color: #C5E3ED; }\n  .top-bar .menu > .menu-text > a {\n    display: inline;\n    padding: 0;\n    color: white; }\n", ""]);
 
 // exports
 
@@ -29176,7 +29176,7 @@ var Nav = function Nav() {
           null,
           _react2.default.createElement(
             _reactRouter.IndexLink,
-            { to: '/', activeClassName: 'active-link' },
+            { to: '/', activeClassName: 'active-link nav-link' },
             'Timer'
           )
         ),
@@ -29185,7 +29185,7 @@ var Nav = function Nav() {
           null,
           _react2.default.createElement(
             _reactRouter.Link,
-            { to: '/', activeClassName: 'active-link' },
+            { to: '/', activeClassName: 'active-link nav-link' },
             'Countdown'
           )
         )
@@ -29200,7 +29200,12 @@ var Nav = function Nav() {
         _react2.default.createElement(
           'li',
           { className: 'menu-text' },
-          'Created by Maxim Mischenko'
+          'Created by ',
+          _react2.default.createElement(
+            'a',
+            { href: 'google.com', target: '_blank' },
+            'Maxim Mischenko'
+          )
         )
       )
     )
