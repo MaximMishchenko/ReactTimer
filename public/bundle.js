@@ -14544,7 +14544,7 @@ exports = module.exports = __webpack_require__(72)(undefined);
 
 
 // module
-exports.push([module.i, ".top-bar, .top-bar ul {\n  background-color: #106582; }\n\n.menu {\n  padding: 10px 0 10px 0; }\n  .menu li {\n    padding: 0 5px 0 5px; }\n\n.top-bar {\n  padding: 0; }\n  .top-bar .menu-text {\n    color: white; }\n  .top-bar ul li .nav-link {\n    color: white; }\n  .top-bar ul li .nav-link:hover {\n    color: #5E96A8;\n    background-color: #C5E3ED; }\n  .top-bar .menu > .menu-text > a {\n    display: inline;\n    padding: 0;\n    color: white; }\n  .top-bar .active-link {\n    color: #5E96A8 !important;\n    font-weight: bold;\n    background-color: #C5E3ED; }\n", ""]);
+exports.push([module.i, ".top-bar, .top-bar ul {\n  background-color: #106582; }\n\n.menu {\n  padding: 10px 0 10px 0; }\n  .menu li {\n    padding-right: 10px; }\n\n.top-bar {\n  padding: 0; }\n  .top-bar .menu-text {\n    color: white; }\n  .top-bar ul li .nav-link {\n    color: white; }\n  .top-bar ul li .nav-link:hover {\n    color: #5E96A8;\n    background-color: #C5E3ED; }\n  .top-bar .menu > .menu-text > a {\n    display: inline;\n    padding: 0;\n    color: white; }\n  .top-bar .active-link {\n    color: #5E96A8 !important;\n    font-weight: bold;\n    background-color: #C5E3ED; }\n", ""]);
 
 // exports
 
