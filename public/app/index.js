@@ -5,6 +5,8 @@ import { Route, Router, IndexRoute, browserHistory, hashHistory } from 'react-ro
 //components
 import Main from './components/Main'
 import NotFound from './components/NotFound'
+import Timer from './components/Timer'
+import Countdown from './components/Countdown'
 
 //load foundation
 import 'style-loader!css-loader!foundation-sites/dist/css/foundation.min.css'
@@ -17,9 +19,10 @@ const app = document.getElementById('app')
 render(
 	<Router history={browserHistory}>
 		<Route path="/" component={Main}>
-
+			<IndexRoute component={Timer}/>
+			<Route path="countdown" component={Countdown}/>
 		</Route>
-		<Route path='*' component={NotFound} />
+		<Route path="*" component={NotFound} />
 	</Router>,
 	app
 	)

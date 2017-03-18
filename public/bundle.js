@@ -12396,6 +12396,14 @@ var _NotFound = __webpack_require__(118);
 
 var _NotFound2 = _interopRequireDefault(_NotFound);
 
+var _Timer = __webpack_require__(254);
+
+var _Timer2 = _interopRequireDefault(_Timer);
+
+var _Countdown = __webpack_require__(253);
+
+var _Countdown2 = _interopRequireDefault(_Countdown);
+
 __webpack_require__(249);
 
 __webpack_require__(250);
@@ -12414,7 +12422,12 @@ var app = document.getElementById('app');
 (0, _reactDom.render)(_react2.default.createElement(
 	_reactRouter.Router,
 	{ history: _reactRouter.browserHistory },
-	_react2.default.createElement(_reactRouter.Route, { path: '/', component: _Main2.default }),
+	_react2.default.createElement(
+		_reactRouter.Route,
+		{ path: '/', component: _Main2.default },
+		_react2.default.createElement(_reactRouter.IndexRoute, { component: _Timer2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: 'countdown', component: _Countdown2.default })
+	),
 	_react2.default.createElement(_reactRouter.Route, { path: '*', component: _NotFound2.default })
 ), app);
 
@@ -12514,7 +12527,7 @@ var Nav = function Nav() {
           null,
           _react2.default.createElement(
             _reactRouter.IndexLink,
-            { to: '/', activeClassName: 'active-link nav-link' },
+            { to: '/', activeClassName: 'active-link', className: 'nav-link' },
             'Timer'
           )
         ),
@@ -12523,7 +12536,7 @@ var Nav = function Nav() {
           null,
           _react2.default.createElement(
             _reactRouter.Link,
-            { to: '/', activeClassName: 'active-link nav-link' },
+            { to: '/countdown', activeClassName: 'active-link', className: 'nav-link' },
             'Countdown'
           )
         )
@@ -14531,7 +14544,7 @@ exports = module.exports = __webpack_require__(72)(undefined);
 
 
 // module
-exports.push([module.i, ".top-bar, .top-bar ul {\n  background-color: #106582; }\n\n.top-bar {\n  padding: 0; }\n  .top-bar .menu-text {\n    color: white; }\n  .top-bar ul li .nav-link {\n    color: white; }\n  .top-bar ul li .nav-link:hover {\n    color: #5E96A8;\n    background-color: #C5E3ED; }\n  .top-bar .menu > .menu-text > a {\n    display: inline;\n    padding: 0;\n    color: white; }\n", ""]);
+exports.push([module.i, ".top-bar, .top-bar ul {\n  background-color: #106582; }\n\n.menu {\n  padding: 10px 0 10px 0; }\n  .menu li {\n    padding: 0 5px 0 5px; }\n\n.top-bar {\n  padding: 0; }\n  .top-bar .menu-text {\n    color: white; }\n  .top-bar ul li .nav-link {\n    color: white; }\n  .top-bar ul li .nav-link:hover {\n    color: #5E96A8;\n    background-color: #C5E3ED; }\n  .top-bar .menu > .menu-text > a {\n    display: inline;\n    padding: 0;\n    color: white; }\n  .top-bar .active-link {\n    color: #5E96A8 !important;\n    font-weight: bold;\n    background-color: #C5E3ED; }\n", ""]);
 
 // exports
 
@@ -29213,6 +29226,106 @@ __webpack_require__(115);
 __webpack_require__(114);
 module.exports = __webpack_require__(113);
 
+
+/***/ }),
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Countdown = function (_React$Component) {
+  _inherits(Countdown, _React$Component);
+
+  function Countdown() {
+    _classCallCheck(this, Countdown);
+
+    return _possibleConstructorReturn(this, (Countdown.__proto__ || Object.getPrototypeOf(Countdown)).apply(this, arguments));
+  }
+
+  _createClass(Countdown, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        'Countdown component'
+      );
+    }
+  }]);
+
+  return Countdown;
+}(_react2.default.Component);
+
+exports.default = Countdown;
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Timer = function (_React$Component) {
+  _inherits(Timer, _React$Component);
+
+  function Timer() {
+    _classCallCheck(this, Timer);
+
+    return _possibleConstructorReturn(this, (Timer.__proto__ || Object.getPrototypeOf(Timer)).apply(this, arguments));
+  }
+
+  _createClass(Timer, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        'Timer component'
+      );
+    }
+  }]);
+
+  return Timer;
+}(_react2.default.Component);
+
+exports.default = Timer;
 
 /***/ })
 /******/ ]);

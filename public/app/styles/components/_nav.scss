@@ -1,7 +1,13 @@
 .top-bar, .top-bar ul {
   background-color: $nav-background;
 }
+.menu {
+  padding: 10px 0 10px 0;
 
+  li {
+    padding: 0 5px 0 5px;
+  }
+}
 .top-bar {
   padding: 0;
 
@@ -22,5 +28,11 @@
     display: inline;
     padding: 0;
     color: $nav-text-color;
+  }
+
+  .active-link {
+    color: $nav-active !important;
+    font-weight: bold;
+    background-color: $light-blue;
   }
 }
