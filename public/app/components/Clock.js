@@ -1,6 +1,17 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 
 class Clock extends React.Component {
+  static defaultProps = {
+    totalSeconds: 0
+  }
+
+  static propTypes = {
+    totalSeconds: PropTypes.number
+  }
+
+  // constructor(props){
+  //   super(props)
+  // }
 
   formatSeconds(totalSeconds){
     let seconds = totalSeconds % 60
@@ -18,9 +29,13 @@ class Clock extends React.Component {
   }
 
   render(){
+    let {totalSeconds} = this.props
+    console.log(this.props);
     return(
-      <div>
-
+      <div className="clock">
+        <span className="clock-text">
+          {this.formatSeconds(totalSeconds)}
+        </span>
       </div>
     )
   }

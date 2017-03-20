@@ -7,7 +7,6 @@ let Main = (props) => {
       <div>
         <div>
           <Nav/>
-          <p className="text-center">Main component rendered</p>
           {props.children}
         </div>
       </div>
