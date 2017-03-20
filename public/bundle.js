@@ -12464,6 +12464,10 @@ var _Clock = __webpack_require__(255);
 
 var _Clock2 = _interopRequireDefault(_Clock);
 
+var _CountdownForm = __webpack_require__(256);
+
+var _CountdownForm2 = _interopRequireDefault(_CountdownForm);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12475,19 +12479,32 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Countdown = function (_React$Component) {
   _inherits(Countdown, _React$Component);
 
-  function Countdown() {
+  function Countdown(props) {
     _classCallCheck(this, Countdown);
 
-    return _possibleConstructorReturn(this, (Countdown.__proto__ || Object.getPrototypeOf(Countdown)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Countdown.__proto__ || Object.getPrototypeOf(Countdown)).call(this, props));
+
+    _this.state = {
+      count: 0
+    };
+    return _this;
   }
 
   _createClass(Countdown, [{
+    key: 'handleSetCountdown',
+    value: function handleSetCountdown(seconds) {
+      this.setState({ count: seconds });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var count = this.state.count;
+
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_Clock2.default, { totalSeconds: 129 })
+        _react2.default.createElement(_Clock2.default, { totalSeconds: count }),
+        _react2.default.createElement(_CountdownForm2.default, { onSetCountdown: this.handleSetCountdown.bind(this) })
       );
     }
   }]);
@@ -12522,13 +12539,13 @@ var Main = function Main(props) {
   return _react2.default.createElement(
     'div',
     null,
+    _react2.default.createElement(_Nav2.default, null),
     _react2.default.createElement(
       'div',
-      null,
+      { className: 'row' },
       _react2.default.createElement(
         'div',
-        null,
-        _react2.default.createElement(_Nav2.default, null),
+        { className: 'column small-centered medium-6 large-4' },
         props.children
       )
     )
@@ -29414,6 +29431,76 @@ Clock.propTypes = {
   totalSeconds: _react.PropTypes.number
 };
 exports.default = Clock;
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CountdownForm = function (_React$Component) {
+  _inherits(CountdownForm, _React$Component);
+
+  function CountdownForm() {
+    _classCallCheck(this, CountdownForm);
+
+    return _possibleConstructorReturn(this, (CountdownForm.__proto__ || Object.getPrototypeOf(CountdownForm)).apply(this, arguments));
+  }
+
+  _createClass(CountdownForm, [{
+    key: 'onSubmit',
+    value: function onSubmit(event) {
+      event.preventDefault();
+      var strSeconds = this.refs.seconds.value;
+
+      if (strSeconds.match(/^[0-9]*$/)) {
+        this.refs.seconds.value = '';
+        this.props.onSetCountdown(parseInt(strSeconds, 10));
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'form',
+          { className: 'countdown-form', ref: 'form', onSubmit: this.onSubmit.bind(this) },
+          _react2.default.createElement('input', { type: 'text', ref: 'seconds', placeholder: 'Enter time in seconds' }),
+          _react2.default.createElement(
+            'button',
+            { className: 'button expanded' },
+            'Start'
+          )
+        )
+      );
+    }
+  }]);
+
+  return CountdownForm;
+}(_react2.default.Component);
+
+exports.default = CountdownForm;
 
 /***/ })
 /******/ ]);
