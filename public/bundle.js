@@ -12740,6 +12740,11 @@ var Countdown = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement(
+          'h1',
+          { className: 'page-title' },
+          'Countdown App'
+        ),
         _react2.default.createElement(_Clock2.default, { totalSeconds: count }),
         renderContolArea()
       );
@@ -14971,7 +14976,7 @@ exports = module.exports = __webpack_require__(73)(undefined);
 
 
 // module
-exports.push([module.i, ".top-bar, .top-bar ul {\n  background-color: #106582; }\n\n.menu {\n  padding: 10px 0 10px 0; }\n  .menu li {\n    padding-right: 10px; }\n\n.top-bar {\n  padding: 0; }\n  .top-bar .menu-text {\n    color: white; }\n  .top-bar ul li .nav-link {\n    color: white; }\n  .top-bar ul li .nav-link:hover {\n    color: #5E96A8;\n    background-color: #C5E3ED; }\n  .top-bar .menu > .menu-text > a {\n    display: inline;\n    padding: 0;\n    color: white; }\n  .top-bar .active-link {\n    color: #5E96A8 !important;\n    font-weight: bold;\n    background-color: #C5E3ED; }\n\n.clock {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #B5D0E2;\n  border: 2px solid #5E96A8;\n  border-radius: 50%;\n  height: 14rem;\n  margin: 4rem auto;\n  width: 14rem; }\n\n.clock-text {\n  color: white;\n  font-size: 2.2rem;\n  font-weight: 300; }\n\n.controls {\n  display: flex;\n  justify-content: center; }\n  .controls .button {\n    padding: .75rem 3rem; }\n  .controls .button:first-child {\n    margin-right: 1.5rem; }\n", ""]);
+exports.push([module.i, ".top-bar, .top-bar ul {\n  background-color: #106582; }\n\n.menu {\n  padding: 10px 0 10px 0; }\n  .menu li {\n    padding-right: 10px; }\n\n.top-bar {\n  padding: 0; }\n  .top-bar .menu-text {\n    color: white; }\n  .top-bar ul li .nav-link {\n    color: white; }\n  .top-bar ul li .nav-link:hover {\n    color: #5E96A8;\n    background-color: #C5E3ED; }\n  .top-bar .menu > .menu-text > a {\n    display: inline;\n    padding: 0;\n    color: white; }\n  .top-bar .active-link {\n    color: #5E96A8 !important;\n    font-weight: bold;\n    background-color: #C5E3ED; }\n\n.clock {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #B5D0E2;\n  border: 2px solid #5E96A8;\n  border-radius: 50%;\n  height: 14rem;\n  margin: 4rem auto;\n  width: 14rem; }\n\n.clock-text {\n  color: white;\n  font-size: 2.2rem;\n  font-weight: 300; }\n\n.controls {\n  display: flex;\n  justify-content: center; }\n  .controls .button {\n    padding: .75rem 3rem; }\n  .controls .button:first-child {\n    margin-right: 1.5rem; }\n\n.page-title {\n  margin: 2rem 0;\n  text-align: center; }\n", ""]);
 
 // exports
 
