@@ -9,10 +9,6 @@ class Clock extends React.Component {
     totalSeconds: PropTypes.number
   }
 
-  // constructor(props){
-  //   super(props)
-  // }
-
   formatSeconds(totalSeconds){
     let seconds = totalSeconds % 60
     let minutes = Math.floor(totalSeconds / 60)
@@ -30,7 +26,7 @@ class Clock extends React.Component {
 
   render(){
     let {totalSeconds} = this.props
-    console.log(this.props);
+    
     return(
       <div className="clock">
         <span className="clock-text">
