@@ -18,7 +18,7 @@ let Nav = () => {
       <div className="top-bar-right">
         <ul className="menu">
           <li className="menu-text">
-            Created by <a href="google.com" target="_blank">Maxim Mischenko</a>
+            Created by <a href="https://github.com/MaximMishchenko" target="_blank">Maxim Mischenko</a>
           </li>
         </ul>
       </div>
